@@ -1,0 +1,25 @@
+.titulo {
+    color:rgb(72, 99, 173);
+}
+#subtitulo {
+    color:green;
+}
+img[src="https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-536613027.jpg"]{
+    width:100%
+}
+img[alt=""]{
+    width: 50%;
+}
+input[type="text"] {
+    background-color: blue;
+}
+.principal {
+    
+    font-size: 24 px;
+    color: red;
+    transition: all 1s ease-in-out
+}
+.principal:hover {
+    color: rgb(91, 138, 19);
+    font-size: 100 px;
+}
