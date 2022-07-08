@@ -42,9 +42,31 @@ color: aliceblue;
     background-color: aquamarine;
     color: rgb(60, 58, 58);
 }
+.content {
+    width: 100%;
+    display: flex;
+    padding: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:center;
 
-.main {
-    margin-top: 100px;
+}
+header {
+    
+    margin-right: 1%;
+    margin-left: 1%;
+}
+main {
+
+    max-width: 100%;
     margin-right: 10px;
+    margin-left: 10px;
+}
+.item {
+    flex: 1;
+}
+
+img {
+    max-width: 50%;
 }
  
