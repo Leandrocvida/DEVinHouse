@@ -1,0 +1,11 @@
+function addProduto() {
+  var descricao = document.getElementById('valor').value;
+  var lista = document.getElementById('lista');
+
+  var item = document.createElement('li');
+  item.innerText = descricao;
+
+  lista.appendChild(item);
+}
+<input id="valor" />
+    <button onclick="addProduto()">adicionar</button>
