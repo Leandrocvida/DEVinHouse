@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.titulonavbar {
+color: aliceblue;
+}
+
+.containernavbar {
+    max-width: 100%;
+    max-height: 100px;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color: rgb(84, 84, 84);
+    z-index: 1;    
+}
+
+.navlogo {
+    max-width: 100px;    
+}
+    
+.containernav {
+    display: flex;
+    justify-content: right;
+     
+}
+
+.containernav {
+    list-style: none;
+}
+.containernav li a {
+    text-decoration: none;
+    color:aliceblue;
+    padding: 10px;
+    transition: .3s;
+}
+
+.containernav li a:hover {
+    text-decoration: none;
+    background-color: aquamarine;
+    color: rgb(60, 58, 58);
+}
+
+.main {
+    margin-top: 100px;
+    margin-right: 10px;
+}
+ 
