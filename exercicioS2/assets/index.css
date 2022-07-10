@@ -8,7 +8,15 @@ body{
     background: rgb(143, 158, 158);
     
 }
-
+button {
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-weight: bold;
+    padding: 16px 24px;
+    text-transform: uppercase;
+  }
+  
 /* barra de navegação */
 .titulonavbar {
 color: aliceblue;
@@ -102,7 +110,54 @@ flex-direction: column;
 width: 30%;
 
 }
+/* Formulario contato */
 
+.form-contact {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+.form-group {
+    display: flex;
+    gap: 20px;
+}
+
+.input-form,
+.textarea-form {
+    display: flex;
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 0.5px solid #909497;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.textarea-form:focus,
+.input-form:focus {
+  outline: none;
+}
+
+.form-button {
+    display: flex;
+    justify-content: flex-end;
+}
+.button-send {
+
+    border: 1 px solid #17202a;
+    background-color: #1c2833;
+    color: white;
+}
+.button-send:hover {
+    background-color:  #212f3d;
+}
+
+footer {
+    display: flex;
+    color: aliceblue;
+    background-color: dimgray;
+    justify-content: space-between;
+}
 
 @media screen and (max-width: 768px) {
 .card {
@@ -116,5 +171,15 @@ flex-wrap: wrap;
    
     width: 100%;
 }
-
+.form-group {
+    flex-wrap: wrap;
+}
+footer {
+    flex-wrap: wrap;
+}
+.containernav {
+    flex-direction: column;
+    align-content: space-between;
+    
+}
 }
