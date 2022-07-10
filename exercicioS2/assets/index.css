@@ -2,7 +2,14 @@
     margin: 0;
     padding: 0;
 }
+/* elementos totais */
 
+body{
+    background: rgb(143, 158, 158);
+    
+}
+
+/* barra de navegação */
 .titulonavbar {
 color: aliceblue;
 }
@@ -24,12 +31,9 @@ color: aliceblue;
 .containernav {
     display: flex;
     justify-content: right;
-     
-}
-
-.containernav {
     list-style: none;
 }
+
 .containernav li a {
     text-decoration: none;
     color:aliceblue;
@@ -42,31 +46,75 @@ color: aliceblue;
     background-color: aquamarine;
     color: rgb(60, 58, 58);
 }
-.content {
-    width: 100%;
-    display: flex;
-    padding: auto;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items:center;
 
-}
-header {
-    
-    margin-right: 1%;
-    margin-left: 1%;
-}
+/* Corpo */
+
 main {
-
+    display: flex;
     max-width: 100%;
     margin-right: 10px;
     margin-left: 10px;
+    flex-direction: column;
 }
-.item {
-    flex: 1;
+.chamada {
+    margin: 10px 0;
 }
 
-img {
-    max-width: 50%;
+.card {
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+    overflow: hidden;
+    align-items: stretch;
+    background-color: antiquewhite;
+    margin: 10px 0 10px;
 }
- 
+
+.card-img {
+flex-grow: 3;
+justify-content: stretch;
+align-items: stretch;
+overflow: hidden;
+}
+
+.card-img img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.card-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.card-container .card {
+flex-direction: column;
+width: 30%;
+
+}
+
+
+@media screen and (max-width: 768px) {
+.card {
+
+    flex-wrap: wrap;
+}
+.card-container {
+flex-wrap: wrap;    
+}
+.card-container .card {
+   
+    width: 100%;
+}
+
+}
