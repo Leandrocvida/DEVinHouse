@@ -46,3 +46,5 @@ const pessoa7 = {
     idade: 16,
     setor: "Arquibancada",
 };
+
+let listaDeConvidados = [pessoa1,pessoa2,pessoa3,pessoa4,pessoa5,pessoa6,pessoa7]
