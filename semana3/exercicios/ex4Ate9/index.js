@@ -48,3 +48,34 @@ const pessoa7 = {
 };
 
 let listaDeConvidados = [pessoa1,pessoa2,pessoa3,pessoa4,pessoa5,pessoa6,pessoa7]
+
+function modificarUmArrayDeObjetos(listaDeConvidados) {
+    var convidadosComBebidaProcessada = [];
+    console.log("teste");
+    listaDeConvidados.forEach((pessoa,i) => {
+        pessoa = listaDeConvidados[i];
+        verificarMaioridade(pessoa);
+       convidadosComBebidaProcessada.push(pessoa);
+       
+      });
+    return convidadosComBebidaProcessada;
+
+}
+
+{
+console.log("rtas");
+
+
+}
+
+
+function verificarMaioridade(pessoa) {
+    if (pessoa.idade>17) {
+       return pessoa.openbar = true;
+    } else {
+       return pessoa.openbar = false;
+    }    
+}
+
+convidadosComBebidaProcessada = modificarUmArrayDeObjetos(listaDeConvidados);
+console.log(convidadosComBebidaProcessada)
