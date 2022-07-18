@@ -84,3 +84,22 @@ var listaArquibancada = convidadosComBebidaProcessada.filter(function (pessoa){
         return pessoa.setor === "Arquibancada";
     })
     
+// exercicio 8
+
+function criaLi(nome) {
+    let li = document.createElement('li');
+    li.textContent = nome;
+    return li;
+}
+
+function adicionarPessoasAUl (umaLista,idDalista) {
+    let menu = document.querySelector(idDalista)
+    umaLista.forEach((pessoa) => {
+        let nomeCompleto = pessoa.nome + " " + pessoa.sobreNome;
+        menu.appendChild(criaLi(nomeCompleto));
+    });
+}
+
+adicionarPessoasAUl (listaCamarote, "#listaCamarote");
+adicionarPessoasAUl (listaPista, "#listaPista");
+adicionarPessoasAUl (listaArquibancada, "#listaArquibancada");
