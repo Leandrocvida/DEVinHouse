@@ -95,8 +95,9 @@ function criaLi(nome) {
 function adicionarPessoasAUl (umaLista,idDalista) {
     let menu = document.querySelector(idDalista)
     umaLista.forEach((pessoa) => {
-        let nomeCompleto = pessoa.nome + " " + pessoa.sobreNome;
-        menu.appendChild(criaLi(nomeCompleto));
+        // let nomeCompleto = pessoa.nome + " " + pessoa.sobreNome;
+        if (pessoa.openbar === true){nomeCompleto = nomeCompleto + " " +"🍹";}
+        // menu.appendChild(criaLi(nomeCompleto));
     });
 }
 
