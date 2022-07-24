@@ -34,8 +34,8 @@ function sacarDinheiro() {
     if (indiceDadosDoCliente!== -1) {
         dadosDoCliente = contasClientes[indiceDadosDoCliente];
     } //cria uma variavel com referencia ao objeto original pra puxar o "cliente" direto array permitindo modificação do array orginal
-    var valorEmConta = dadosDoCliente.saldo;
-    var dinheiroASacar = parseInt(document.getElementById("valor").value); //puxa o valor digitado no imput do HTML
+    let valorEmConta = dadosDoCliente.saldo;
+    let dinheiroASacar = parseInt(document.getElementById("valor").value); //puxa o valor digitado no imput do HTML
     if (dinheiroASacar <= 0) {
         alert("Valor Inválido");
         
@@ -50,17 +50,36 @@ function sacarDinheiro() {
     } 
 };
 
-
+function depositarDinheiro() {
+   
+    let qualCliente = selectContas.options[selectContas.selectedIndex].value;  // puxa qual dos clientes a partir do select
+    let indiceDadosDoCliente = contasClientes.findIndex(elemento => elemento.nome === qualCliente); //acha o indice
+    let dadosDoCliente;
+    if (indiceDadosDoCliente!== -1) {
+        dadosDoCliente = contasClientes[indiceDadosDoCliente];
+    } //cria uma variavel com referencia ao objeto original pra puxar o "cliente" direto array permitindo modificação do array orginal
+    let valorEmConta = dadosDoCliente.saldo;
+    let dinheiroASacar = parseInt(document.getElementById("valor").value); //puxa o valor digitado no imput do HTML
+    if (dinheiroASacar <= 0) {
+        alert("Valor Inválido");
+        
+    } else if ( dinheiroASacar <= valorEmConta ){
+        valorEmConta = valorEmConta + dinheiroASacar;
+        dadosDoCliente.saldo = valorEmConta;
+        alert(`Deposito Realizado! Agora você possui ${valorEmConta} reais em sua conta.`);    
+        return;
+    } 
+};
 
 
 var operacao = document.getElementById("operacao");
 
-function aoclique() {
+function aoclique(event) {
     event.preventDefault()
     let qualOperacao = operacao.options[operacao.selectedIndex].value;
     if (qualOperacao === "sacar") {
         sacarDinheiro()
     } else if (qualOperacao === "depositar")  {
-        alert("deposito")
+        depositarDinheiro()
     }  
 };
