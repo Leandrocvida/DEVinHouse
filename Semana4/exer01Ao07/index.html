@@ -8,17 +8,19 @@
     <title>Conta bancária</title>
 </head>
 <body onLoad = "inserirOpcSelect();">
-    <div>
-        <label for="selectContas">Escolha o cliente:</label>
-        <select name="selectContas" id="selectContas">
-
-
-        </select>
-    </div>
+  
     
     <div>
-        <input type="number" name="" placeholder="Valor" id="valor">
-        <form action="submit">
+        
+
+
+        <form onSubmit="return aoclique(event)">
+            <div>
+                <label for="selectContas">Escolha o cliente:</label>
+                <select name="selectContas" id="selectContas">
+                </select>
+            </div>
+            <input type="number" name="" placeholder="Valor" id="valor">
             <label for="ops">Escolha a Operação:</label>
             <select name="ops" id="operacao">
                 <option value="sacar">Sacar</option>
@@ -28,6 +30,6 @@
         </form>
     </div>
     
-    <script src="./Assets/index.js"></script>  
+    <script src="./Assets/indexantigo.js"></script>  
 </body>
 </html>
