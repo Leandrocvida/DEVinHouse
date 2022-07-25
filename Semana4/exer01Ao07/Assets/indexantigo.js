@@ -36,7 +36,7 @@ function sacarDinheiro() {
     } //cria uma variavel com referencia ao objeto original pra puxar o "cliente" direto array permitindo modificação do array orginal
     let valorEmConta = dadosDoCliente.saldo;
     let dinheiroASacar = parseInt(document.getElementById("valor").value); //puxa o valor digitado no imput do HTML
-    if (dinheiroASacar <= 0) {
+    if (dinheiroASacar <= 0 || isNaN(dinheiroASacar)) {
         alert("Valor Inválido");
         
     } else if ( dinheiroASacar > valorEmConta ){
@@ -60,7 +60,7 @@ function depositarDinheiro() {
     } //cria uma variavel com referencia ao objeto original pra puxar o "cliente" direto array permitindo modificação do array orginal
     let valorEmConta = dadosDoCliente.saldo;
     let dinheiroASacar = parseInt(document.getElementById("valor").value); //puxa o valor digitado no imput do HTML
-    if (dinheiroASacar <= 0) {
+    if (dinheiroASacar <= 0 || isNaN(dinheiroASacar)) {
         alert("Valor Inválido");
         
     } else if ( dinheiroASacar <= valorEmConta ){
