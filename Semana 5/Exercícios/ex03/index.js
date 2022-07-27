@@ -10,3 +10,17 @@ class Produto {
     }
 }
 
+class Pedido {
+    constructor(numeroPedido, nomeCliente){
+        this.numeroPedido = numeroPedido;
+        this.dataPedido = new Date( ).toLocaleDateString( );
+        this.estaPago = false;
+        this.listaProdutos = [];
+        this.nomeCliente = nomeCliente;
+
+    }
+}
+
+// const pedidoTeste = new Pedido("1234", "Leandro");
+
+// console.log(pedidoTeste)
