@@ -39,3 +39,68 @@ const abacaxi = new Produto("Abacaxi", 6, true, 55);
 
 const pedidoLeandro = new Pedido("2022001", "Leandro");
 const pedidoSolange = new Pedido("2022002", "Solange");
+
+// Pede pra executar
+pedidoLeandro.adicionarProduto(banana);
+pedidoLeandro.adicionarProduto(maca);
+pedidoLeandro.adicionarProduto(abacaxi);
+
+pedidoSolange.adicionarProduto(banana);
+pedidoSolange.adicionarProduto(uva);
+pedidoSolange.adicionarProduto(pera);
+
+const pedidos = [ pedidoLeandro, pedidoSolange];
+console.log(pedidos)
+// Coisas do HTML
+
+
+
+function formataParaReal(num) {
+    return num.toLocaleString("pt-Br",{
+        style: "currency",
+        currency: "BRL"
+    });
+}
+
+function criaLiParaProduto(produto){
+    const iLProdutoEl = document.createElement("li");
+    iLProdutoEl.innerText = `${produto.nome} - ${produto.quantidade} Kg disponíveis - ${ formataParaReal(produto.preco)}`
+return iLProdutoEl
+}
+
+function mostraProdutos(lista) {
+    const labelEl = document.createElement("label")
+    labelEl.htmlFor = "produtos";
+    labelEl.innerText = "produtos";
+
+    const uLlistaEl = document.createElement("uL");
+    uLlistaEl.name = "produtos"
+
+    lista.forEach((item) => {
+        uLlistaEl.appendChild(criaLiParaProduto(item))
+    })
+    return [labelEl, uLlistaEl]
+}
+
+function criaLiPedido(pedido) {
+    const liPedido = document.createElement("li");
+    liPedido.innerHTML = /*html*/ `
+        <p>PEDIDO No. ${pedido.numeroPedido}</p>
+        <p>Pedido Realizado em: ${pedido.dataPedido}</p>
+        <p>Cliente: ${pedido.nomeCliente}</p>
+        <p>Total do Pedido: ${formataParaReal(pedido.calcularTotal())}</p>
+        <p>Pagamento: ${pedido.estaPago ? "Pedido Pago" : "Pedido A Pagar" }</p>
+    `
+    const resultado = mostraProdutos(pedido.listaProdutos)
+    const label = resultado[0];
+    const lista = resultado[1];
+
+
+    liPedido.appendChild(label);
+    liPedido.appendChild(lista);
+    return liPedido
+}
+const pedidosEL = document.getElementById("ulPedidos");
+pedidos.forEach((pedido) => {
+    pedidosEL.appendChild(criaLiPedido(pedido))
+});
