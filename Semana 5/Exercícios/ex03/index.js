@@ -1,12 +1,9 @@
 class Produto {
-
     constructor(nome, preco, emEstoque, quantidade) {
         this.nome = nome;
         this.preco = preco;
         this.emEstoque = emEstoque;
         this.quantidade = quantidade;
-
-
     }
 }
 
@@ -33,6 +30,12 @@ class Pedido {
         return valorTotal
     }
 }
-const pedidoTeste = new Pedido("1234", "Leandro");
 
-console.log(pedidoTeste)
+const banana = new Produto("Banana", 3, true, 21);
+const pera = new Produto("Pera", 7, true, 62);
+const uva = new Produto("Uva", 9, true, 31);
+const maca = new Produto("Maçã", 5, true, 42);
+const abacaxi = new Produto("Abacaxi", 6, true, 55);
+
+const pedidoLeandro = new Pedido("2022001", "Leandro");
+const pedidoSolange = new Pedido("2022002", "Solange");
