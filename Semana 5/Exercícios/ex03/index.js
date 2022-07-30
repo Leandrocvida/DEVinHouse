@@ -23,9 +23,15 @@ class Pedido {
         const ehProduto = produto instanceof Produto;
         if (ehProduto) {
             this.listaProdutos.push(produto)
+        }
     }
-    
-}
+    calcularTotal(){
+        let valorTotal = 0;
+            this.listaProdutos.forEach((produto)=>{
+           valorTotal = valorTotal + produto.quantidade * produto.preco;            
+        })
+        return valorTotal
+    }
 }
 const pedidoTeste = new Pedido("1234", "Leandro");
 
