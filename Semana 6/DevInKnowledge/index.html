@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVinKnowledge</title>
+</head>
+<body>
+   <aside>
+       <div>
+           <h1>
+               DEVinKnowledge
+           </h1>
+               <div>
+                   <h3>Learn, Code and Save</h3>
+               </div>
+       </div>
+       <div class="formContainer">
+        <form id="formulario" action="">
+            <div>
+                <h2>Título</h2>
+                <input 
+                type="text" 
+                minlength="8" 
+                maxlength="64" 
+                name="titulo" 
+                placeholder="Digite seu Título" 
+                id="tituloInput"
+                required
+                >
+            </div>
+            <div>
+                <h2>Linguagem/skill</h2>
+                <input 
+                name="linguagem" 
+                type="text" 
+                minlength="8" 
+                maxlength="32" 
+                placeholder="Digite uma Linguagem ou skill" 
+                id="linguagemInput" 
+                required
+                >
+            </div>
+            <div>
+                <h2>categoria</h2>
+                 <select name="" id="categoriaInput" required>
+                    <option value="frontEnd">FrontEnd</option>
+                    <option value="backEnd">BackEnd</option>
+                    <option value="fullStack">FullStack</option>
+                    <option value="softSkill">Comportamental/Soft</option>
+                </select>
+            </div>
+            <div>
+                <h2>Descriçãp Completa (Dica)</h2>
+                <textarea 
+                minlength="16" maxlength="1024"
+                class="textarea-form"
+                id="descricaoInput"
+                name="story"
+                placeholder="Descreva Sua Dica"
+                rows="5"
+                required
+                ></textarea>
+            </div>
+            <div>
+                <h2>Vídeo Youtube</h2>
+                <input type="url" placeholder="Digite o endereço de um Video" name="vidYoutubeInput" id="vidYoutubeInput">
+            </div>
+            <div class="buttonContainer">
+                <button id="limparInput">Limpar</button>
+                <button  type="submit" id="salvarInput">Salvar</button>
+            </div>
+        </form>
+
+       </div>
+   </aside>
+   <header>
+       <div class="displayContainer">
+            <div class ="display">
+                <h2>Total</h2>
+                <p id="totalDisplay">39</p>
+            </div>
+            
+            <div class ="display">
+                <h2>FrontEnd</h2>
+                <p id="frontEndDisplayDisplay">10</p>
+            </div>
+            <div class ="display">
+                <h2>BackEnd</h2>
+                <p id="BackEndDisplay">8</p>
+            </div>
+            <div class ="display">
+                <h2>FullStack</h2>
+                <p id="FullStackDisplay">12</p>
+            </div>
+            <div class ="display">
+                <h2>SoftSkill</h2>
+                <p id="SoftSkillDisplay">9</p>
+            </div>
+       </div> 
+       <div class="searchBarContainer">
+            <input type="text" placeholder="Digite um Título para Pesquisar" id="searchBarQuerry">
+            <button id="searchBarLimpar">Limpar</button>
+            <button id="searchBarSalvar">Salvar</button>
+       </div>
+   </header>
+    <main>
+        <ul class="cardContainer" id="cardContainer">
+            <li class="card">
+                <h2 id=>Título</h2>
+                <h3>Linguagem:</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut rem, iusto odio soluta fugit reprehenderit voluptas expedita, delectus, sed itaque blanditiis! Debitis perspiciatis, ut voluptate saepe est reprehenderit non inventore.</p>
+                <button id="vid01">youtube</button>
+                <button id="clear">Limpar</button>
+                <button>Editar</button>
+            </li>
+            <li class="card">
+                <h2 id=>Título</h2>
+                <h3>Linguagem:</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut rem, iusto odio soluta fugit reprehenderit voluptas expedita, delectus, sed itaque blanditiis! Debitis perspiciatis, ut voluptate saepe est reprehenderit non inventore.</p>
+                <button id="vid01">youtube</button>
+                <button id="clear">Limpar</button>
+                <button>Editar</button>
+            </li>
+            <li class="card">
+                <h2 id=>Título</h2>
+                <h3>Linguagem:</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut rem, iusto odio soluta fugit reprehenderit voluptas expedita, delectus, sed itaque blanditiis! Debitis perspiciatis, ut voluptate saepe est reprehenderit non inventore.</p>
+                <button id="vid01">youtube</button>
+                <button id="clear">Limpar</button>
+                <button>Editar</button>
+            </li>
+        </ul>
+    </main>
+<script src="./src/index.js"></script>
+</body>
+</html>
