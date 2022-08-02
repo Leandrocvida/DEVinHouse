@@ -3,6 +3,7 @@ const inputLinguagem = document.getElementById("linguagemInput");
 const inputCategoria = document.getElementById("categoriaInput");
 const inputDescricao = document.getElementById("descricaoInput")
 const inputVidYoutube = document.getElementById("vidYoutubeInput");
+const uLDosCards = document.getElementById("uLDosCards");
 let todasAsDicas = [];
 let todasAsDicasDefault = [
     {
@@ -62,6 +63,7 @@ event.preventDefault();
 verificaLSporArray();
 todasAsDicas.push(criaDica());
 localStorage.setItem("todasAsDicas", JSON.stringify(todasAsDicas))
+popularCards ()
 }
 
 function verificaLSporArray() {
@@ -78,14 +80,57 @@ function limparForm() {
     document.getElementById("formulario").reset()
 }
 
-
 function teste() {
     alert("teste");
     // function construirDica(event);
     // console.log(todasAsDicas)
 
 } 
+
+function popularCards (){
+    verificaLSporArray();
+    todasAsDicas.forEach(element => {
+        uLDosCards.appendChild(criaCard(element))
+    });
+}
+
+function criaCard(dica) {
+    const liCard = document.createElement("li");
+    liCard.setAttribute("class", "card");
+    const idCompleto = `cardId${dica.id}`
+    liCard.setAttribute("id", idCompleto);
+    liCard.setAttribute("title", dica.titulo);
+    liCard.innerHTML = `<h2 id=>${dica.titulo}</h2>
+    <h3>Linguagem: ${dica.linguagem}</h3>
+    <h3>Categoria: ${dica.categoria}</h3>
+    <p>${dica.descricao}</p>
+    <a href = "${dica.video}" class = "botaoVideo"><button>video</button></a>
+    <button id = "botaoLimparCard${dica.id}">Limpar</button>
+    <button id ="botaoEditarCard${dica.id}">Editar</button>`
+    return liCard
+}
+
+function pesquisaPorTitulo(params) {
+    
+let inputPesquisa = document.getElementById("searchBarQuerry").value
+
+function pequisarArray(objBuscado) {
+    let objMinusc = objBuscado.tolowercase() 
+    let arrayFiltrado = todasAsDicas.filter(function (dica) { return dica.titulo.tolowercase().includes(objMinusc) })
+       
+}
+}
+function popularDataList() {
+    let datalist = document.getElementById("listaDeTitulos")
+    todasAsDicas.forEach(element => {
+       let option = document.createElement("option")
+       option.setAttribute("value",`${element.titulo}`)
+        datalist.appendChild(option)
+    });
+}
 verificaLSporArray();
+popularCards ();
+popularDataList()
 // window.addEventListener("load", verificaLSporArray)
 // console.log(todasAsDicas)
 document.getElementById("salvarInput").onclick = construirDica;
