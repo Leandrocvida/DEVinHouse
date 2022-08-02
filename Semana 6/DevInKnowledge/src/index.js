@@ -63,7 +63,7 @@ event.preventDefault();
 verificaLSporArray();
 todasAsDicas.push(criaDica());
 localStorage.setItem("todasAsDicas", JSON.stringify(todasAsDicas))
-popularCards ()
+popularCards (todasAsDicas)
 }
 
 function verificaLSporArray() {
@@ -87,9 +87,10 @@ function teste() {
 
 } 
 
-function popularCards (){
+function popularCards (lista){
     verificaLSporArray();
-    todasAsDicas.forEach(element => {
+    uLDosCards.replaceChildren();
+    lista.forEach(element => {
         uLDosCards.appendChild(criaCard(element))
     });
 }
@@ -110,15 +111,41 @@ function criaCard(dica) {
     return liCard
 }
 
-function pesquisaPorTitulo(params) {
-    
-let inputPesquisa = document.getElementById("searchBarQuerry").value
-
-function pequisarArray(objBuscado) {
-    let objMinusc = objBuscado.tolowercase() 
-    let arrayFiltrado = todasAsDicas.filter(function (dica) { return dica.titulo.tolowercase().includes(objMinusc) })
-       
+function pesquisaPorTitulo(event) {
+    event.preventDefault();
+    let inputPesquisa = document.getElementById("searchBarQuerry").value
+    let objMinusc = inputPesquisa.toLowerCase()
+    let arrayFiltrado = todasAsDicas.filter(function (dica) { return dica.titulo.toLowerCase().includes(objMinusc) })
+    popularCards(arrayFiltrado);
 }
+function filtrarPorCategoria(categ) {
+    verificaLSporArray();
+    let arrayFiltrado = todasAsDicas.filter(function (dica) { return dica.categoria == categ })
+    
+    return arrayFiltrado
+}
+let arrayFrontEnd = filtrarPorCategoria("frontEnd");
+let arrayBackEnd = filtrarPorCategoria("backEnd");
+let arrayFullStack= filtrarPorCategoria("fullStack");
+let arraySoftSkill= filtrarPorCategoria("softSkill");
+
+function contadorDisplay() {
+   let totalDisplay = document.getElementById("totalDisplay");
+   let frontEndDisplay = document.getElementById("frontEndDisplay");
+   let backEndDisplay = document.getElementById("backEndDisplay");
+   let fullStackDisplay = document.getElementById("FullStackDisplay");
+   let softSkillDisplay = document.getElementById("SoftSkillDisplay");
+   totalDisplay.innerText = todasAsDicas.length;
+   frontEndDisplay.innerText = arrayFrontEnd.length;
+   backEndDisplay.innerText = arrayBackEnd.length;
+   fullStackDisplay.innerText = arrayFullStack.length;
+   softSkillDisplay.innerText = arraySoftSkill.length;
+
+}
+
+function limpaUl(event) {
+    event.preventDefault();
+    uLDosCards.replaceChildren()
 }
 function popularDataList() {
     let datalist = document.getElementById("listaDeTitulos")
@@ -129,10 +156,12 @@ function popularDataList() {
     });
 }
 verificaLSporArray();
-popularCards ();
+popularCards (todasAsDicas);
 popularDataList()
+contadorDisplay()
 // window.addEventListener("load", verificaLSporArray)
 // console.log(todasAsDicas)
+document.getElementById("botaoPesquisar").onclick = pesquisaPorTitulo;
 document.getElementById("salvarInput").onclick = construirDica;
 document.getElementById("limparInput").onclick = limparForm;
-
+document.getElementById("searchBarLimpar").onclick = limpaUl;

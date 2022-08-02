@@ -19,7 +19,7 @@
        <div class="formContainer">
         <form id="formulario" action="">
             <div>
-                <h2>Título</h2>
+                <label>Título</label><br>
                 <input 
                 type="text" 
                 minlength="8" 
@@ -31,7 +31,7 @@
                 >
             </div>
             <div>
-                <h2>Linguagem/skill</h2>
+                <label>Linguagem/skill</label><br>
                 <input 
                 name="linguagem" 
                 type="text" 
@@ -43,8 +43,8 @@
                 >
             </div>
             <div>
-                <h2>categoria</h2>
-                 <select name="" id="categoriaInput" required>
+                <label>categoria</label><br>
+                 <select name="categoriaInput" id="categoriaInput" required>
                     <option value="frontEnd">FrontEnd</option>
                     <option value="backEnd">BackEnd</option>
                     <option value="fullStack">FullStack</option>
@@ -52,7 +52,7 @@
                 </select>
             </div>
             <div>
-                <h2>Descriçãp Completa (Dica)</h2>
+                <label>Descriçãp Completa (Dica)</label><br>
                 <textarea 
                 minlength="16" maxlength="1024"
                 class="textarea-form"
@@ -64,7 +64,7 @@
                 ></textarea>
             </div>
             <div>
-                <h2>Vídeo Youtube</h2>
+                <label>Vídeo Youtube</label><br>
                 <input type="url" placeholder="Digite o endereço de um Video" name="vidYoutubeInput" id="vidYoutubeInput">
             </div>
             <div class="buttonContainer">
@@ -79,58 +79,38 @@
        <div class="displayContainer">
             <div class ="display">
                 <h2>Total</h2>
-                <p id="totalDisplay">39</p>
+                <p id="totalDisplay"></p>
             </div>
             
             <div class ="display">
                 <h2>FrontEnd</h2>
-                <p id="frontEndDisplayDisplay">10</p>
+                <p id="frontEndDisplay"></p>
             </div>
             <div class ="display">
                 <h2>BackEnd</h2>
-                <p id="BackEndDisplay">8</p>
+                <p id="backEndDisplay"></p>
             </div>
             <div class ="display">
                 <h2>FullStack</h2>
-                <p id="FullStackDisplay">12</p>
+                <p id="FullStackDisplay"></p>
             </div>
             <div class ="display">
                 <h2>SoftSkill</h2>
-                <p id="SoftSkillDisplay">9</p>
+                <p id="SoftSkillDisplay"></p>
             </div>
        </div> 
-       <div class="searchBarContainer">
-            <input type="text" placeholder="Digite um Título para Pesquisar" id="searchBarQuerry">
+       <form class="searchBarContainer">
+            <input type="search" placeholder="Digite um Título para Pesquisar" id="searchBarQuerry" list = "listaDeTitulos">
             <button id="searchBarLimpar">Limpar</button>
-            <button id="searchBarSalvar">Salvar</button>
-       </div>
+            <button id="botaoPesquisar">Pesquisar</button>
+            <datalist id="listaDeTitulos">
+
+            </datalist>
+       </form>
    </header>
     <main>
-        <ul class="cardContainer" id="cardContainer">
-            <li class="card">
-                <h2 id=>Título</h2>
-                <h3>Linguagem:</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut rem, iusto odio soluta fugit reprehenderit voluptas expedita, delectus, sed itaque blanditiis! Debitis perspiciatis, ut voluptate saepe est reprehenderit non inventore.</p>
-                <button id="vid01">youtube</button>
-                <button id="clear">Limpar</button>
-                <button>Editar</button>
-            </li>
-            <li class="card">
-                <h2 id=>Título</h2>
-                <h3>Linguagem:</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut rem, iusto odio soluta fugit reprehenderit voluptas expedita, delectus, sed itaque blanditiis! Debitis perspiciatis, ut voluptate saepe est reprehenderit non inventore.</p>
-                <button id="vid01">youtube</button>
-                <button id="clear">Limpar</button>
-                <button>Editar</button>
-            </li>
-            <li class="card">
-                <h2 id=>Título</h2>
-                <h3>Linguagem:</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut rem, iusto odio soluta fugit reprehenderit voluptas expedita, delectus, sed itaque blanditiis! Debitis perspiciatis, ut voluptate saepe est reprehenderit non inventore.</p>
-                <button id="vid01">youtube</button>
-                <button id="clear">Limpar</button>
-                <button>Editar</button>
-            </li>
+        <ul class="cardContainer" id="uLDosCards">
+            
         </ul>
     </main>
 <script src="./src/index.js"></script>
