@@ -1,13 +1,15 @@
+const inputHiddenID = document.getElementById("identificadorOculto");
 const inputTitulo = document.getElementById("tituloInput");
 const inputLinguagem = document.getElementById("linguagemInput");
 const inputCategoria = document.getElementById("categoriaInput");
 const inputDescricao = document.getElementById("descricaoInput")
 const inputVidYoutube = document.getElementById("vidYoutubeInput");
 const uLDosCards = document.getElementById("uLDosCards");
+let inputPesquisa = document.getElementById("searchBarQuerry").value;
 let todasAsDicas = [];
 let todasAsDicasDefault = [
     {
-    id: 1,
+    id: "1",
     titulo: `titulo da dica 01`,
     linguagem: "umaskillqualquer",
     categoria: "frontEnd",
@@ -15,26 +17,26 @@ let todasAsDicasDefault = [
     video: "https://www.youtube.com/" 
     },
     {
-    id: 2,
+    id: "2",
     titulo: `titulo da dica 02`,
     linguagem: "umaskillqualquer",
-    categoria: "frontEnd",
+    categoria: "backEnd",
     descricao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut rem, iusto odio soluta fugit reprehenderit voluptas expedita, delectus, sed itaque blanditiis! Debitis perspiciatis, ut voluptate saepe est reprehenderit non inventore.",
     video: "https://www.youtube.com/" 
     },
     {
-    id: 3,
+    id: "deb839fdf-68f1-4b23-bec2-16e0af1d478",
     titulo: `titulo da dica 03`,
     linguagem: "umaskillqualquer",
-    categoria: "frontEnd",
+    categoria: "fullStack",
     descricao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut rem, iusto odio soluta fugit reprehenderit voluptas expedita, delectus, sed itaque blanditiis! Debitis perspiciatis, ut voluptate saepe est reprehenderit non inventore.",
     video: "https://www.youtube.com/" 
     },
     {
-    id: 4,
+    id: "4",
     titulo: `titulo da dica 04`,
     linguagem: "umaskillqualquer",
-    categoria: "frontEnd",
+    categoria: "softSkill",
     descricao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut rem, iusto odio soluta fugit reprehenderit voluptas expedita, delectus, sed itaque blanditiis! Debitis perspiciatis, ut voluptate saepe est reprehenderit non inventore.",
     video: "https://www.youtube.com/" 
     },
@@ -42,7 +44,7 @@ let todasAsDicasDefault = [
 ]
 
 class Dica {
-    id = todasAsDicas.length + 1;
+    id = uuidv4();
     constructor(titulo, linguagem, categoria, descricao, video) {
         this.titulo = (titulo).value;
         this.linguagem = (linguagem).value;
@@ -53,39 +55,42 @@ class Dica {
 }
 
 }
-function criaDica() {
+
+const uuidv4 = () => {
+    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+      (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
+    );
+  };
+
+  function criaDica() {
     let dica = new Dica(inputTitulo, inputLinguagem, inputCategoria, inputDescricao, inputVidYoutube);
 return dica
 }
 
-function construirDica(event) {
-event.preventDefault();
-verificaLSporArray();
+function construirDica() {
+
 todasAsDicas.push(criaDica());
-localStorage.setItem("todasAsDicas", JSON.stringify(todasAsDicas))
-popularCards (todasAsDicas)
+localStorage.setItem("todasAsDicas", JSON.stringify(todasAsDicas));
+popularCards (todasAsDicas);
+contadorDisplay()
+limparForm()
 }
 
 function verificaLSporArray() {
     if (localStorage.hasOwnProperty("todasAsDicas")) {
         return todasAsDicas = JSON.parse(localStorage.getItem("todasAsDicas"))
-      }
-      else {
+    }
+    else {
         todasAsDicas = todasAsDicasDefault
         return localStorage.setItem("todasAsDicas", JSON.stringify(todasAsDicas))
-      }       
+    }       
 }
 
 function limparForm() {
+    inputHiddenID.value = null;
     document.getElementById("formulario").reset()
 }
 
-function teste() {
-    alert("teste");
-    // function construirDica(event);
-    // console.log(todasAsDicas)
-
-} 
 
 function popularCards (lista){
     verificaLSporArray();
@@ -101,35 +106,82 @@ function criaCard(dica) {
     const idCompleto = `cardId${dica.id}`
     liCard.setAttribute("id", idCompleto);
     liCard.setAttribute("title", dica.titulo);
-    liCard.innerHTML = `<h2 id=>${dica.titulo}</h2>
+    // const button = document.createElement("button");
+    // button.onclick = "removerDica('${dica.id}')"
+    liCard.innerHTML = `<h2 id="idTitulo${dica.titulo}">${dica.titulo}</h2>
     <h3>Linguagem: ${dica.linguagem}</h3>
     <h3>Categoria: ${dica.categoria}</h3>
     <p>${dica.descricao}</p>
-    <a href = "${dica.video}" class = "botaoVideo"><button>video</button></a>
-    <button id = "botaoLimparCard${dica.id}">Limpar</button>
-    <button id ="botaoEditarCard${dica.id}">Editar</button>`
+    <a href = "${dica.video}" target="_blank" class = "botaoVideo"><button>video</button></a>
+    <button id = "botaoLimparCard${dica.id}" onclick = "removerDica('${dica.id}')">Limpar</button>
+    <button id ="botaoEditarCard${dica.id}" onclick = "editarDica('${dica.id}')">Editar</button>`
     return liCard
 }
 
+function editarDica(idDicaAEditar) {
+    verificaLSporArray();
+    const indexDicaAEditar = todasAsDicas.findIndex(dica => dica.id === idDicaAEditar) 
+     let dicaAEditar = todasAsDicas[indexDicaAEditar];
+    populaInputs(dicaAEditar);
+}
+
+function populaInputs (dicaParaEditar) {
+    inputHiddenID.value = dicaParaEditar.id;
+    inputTitulo.value = dicaParaEditar.titulo;
+    inputLinguagem.value = dicaParaEditar.linguagem;
+    inputCategoria.value = dicaParaEditar.categoria;
+    inputDescricao.value = dicaParaEditar.descricao;
+    inputVidYoutube.value = dicaParaEditar.video;
+};
+
+function editarOuCriar(event) {
+        event.preventDefault();
+        verificaLSporArray();
+       if (inputHiddenID.value.length === 0) {
+        construirDica();
+        alert("Nova Dica Adicionada")
+    } else {
+        const indexDicaAEditar = todasAsDicas.findIndex(dica => dica.id === inputHiddenID.value) 
+        todasAsDicas.splice(indexDicaAEditar, 1)
+        construirDica()
+        alert(`Dica Editada com Sucesso!`)
+    }
+    
+}
+
+function removerDica(idDaDicaARemover) { 
+    let texto = "Essa ação irá remover a dica!"; 
+    if (confirm(texto) == true) {
+        verificaLSporArray();
+        todasAsDicas = todasAsDicas.filter(dica => dica.id !== idDaDicaARemover)
+        localStorage.setItem("todasAsDicas", JSON.stringify(todasAsDicas))
+        popularCards (todasAsDicas);
+        contadorDisplay()
+        alert("Dica Removida!")
+    } else {
+        alert("Dica Mantida!")
+    }
+}
 function pesquisaPorTitulo(event) {
     event.preventDefault();
-    let inputPesquisa = document.getElementById("searchBarQuerry").value
-    let objMinusc = inputPesquisa.toLowerCase()
+    let inputPesquisaInt = document.getElementById("searchBarQuerry").value;
+    const objMinusc = inputPesquisaInt.toLowerCase()
     let arrayFiltrado = todasAsDicas.filter(function (dica) { return dica.titulo.toLowerCase().includes(objMinusc) })
     popularCards(arrayFiltrado);
 }
+
 function filtrarPorCategoria(categ) {
     verificaLSporArray();
     let arrayFiltrado = todasAsDicas.filter(function (dica) { return dica.categoria == categ })
     
     return arrayFiltrado
 }
-let arrayFrontEnd = filtrarPorCategoria("frontEnd");
-let arrayBackEnd = filtrarPorCategoria("backEnd");
-let arrayFullStack= filtrarPorCategoria("fullStack");
-let arraySoftSkill= filtrarPorCategoria("softSkill");
 
 function contadorDisplay() {
+    let arrayFrontEnd = filtrarPorCategoria("frontEnd");
+    let arrayBackEnd = filtrarPorCategoria("backEnd");
+    let arrayFullStack= filtrarPorCategoria("fullStack");
+    let arraySoftSkill= filtrarPorCategoria("softSkill");
    let totalDisplay = document.getElementById("totalDisplay");
    let frontEndDisplay = document.getElementById("frontEndDisplay");
    let backEndDisplay = document.getElementById("backEndDisplay");
@@ -147,6 +199,7 @@ function limpaUl(event) {
     event.preventDefault();
     uLDosCards.replaceChildren()
 }
+
 function popularDataList() {
     let datalist = document.getElementById("listaDeTitulos")
     todasAsDicas.forEach(element => {
@@ -155,6 +208,10 @@ function popularDataList() {
         datalist.appendChild(option)
     });
 }
+function limparCampoPesquisa() {
+    inputPesquisa = "";
+}
+
 verificaLSporArray();
 popularCards (todasAsDicas);
 popularDataList()
@@ -162,6 +219,7 @@ contadorDisplay()
 // window.addEventListener("load", verificaLSporArray)
 // console.log(todasAsDicas)
 document.getElementById("botaoPesquisar").onclick = pesquisaPorTitulo;
-document.getElementById("salvarInput").onclick = construirDica;
 document.getElementById("limparInput").onclick = limparForm;
-document.getElementById("searchBarLimpar").onclick = limpaUl;
+document.getElementById("searchBarLimpar").onclick = limparCampoPesquisa();
+// document.getElementById("formulario").onsubmit = construirDica; //tem q por um if else
+document.getElementById("formulario").onsubmit = editarOuCriar;
