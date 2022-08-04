@@ -94,7 +94,7 @@ function limparForm() {
 
 function popularCards (lista){
     verificaLSporArray();
-    uLDosCards.replaceChildren();
+    uLDosCards.replaceChildren();      
     lista.forEach(element => {
         uLDosCards.appendChild(criaCard(element))
     });
@@ -103,19 +103,44 @@ function popularCards (lista){
 function criaCard(dica) {
     const liCard = document.createElement("li");
     liCard.setAttribute("class", "card");
-    const idCompleto = `cardId${dica.id}`
+    const idCompleto = `cardId${dica.id}`;
     liCard.setAttribute("id", idCompleto);
     liCard.setAttribute("title", dica.titulo);
-    // const button = document.createElement("button");
-    // button.onclick = "removerDica('${dica.id}')"
-    liCard.innerHTML = `<h2 id="idTitulo${dica.titulo}">${dica.titulo}</h2>
-    <h3>Linguagem: ${dica.linguagem}</h3>
-    <h3>Categoria: ${dica.categoria}</h3>
-    <p>${dica.descricao}</p>
-    <a href = "${dica.video}" target="_blank" class = "botaoVideo"><button>video</button></a>
-    <button id = "botaoLimparCard${dica.id}" onclick = "removerDica('${dica.id}')">Limpar</button>
-    <button id ="botaoEditarCard${dica.id}" onclick = "editarDica('${dica.id}')">Editar</button>`
+    let cardH2 = document.createElement("h2");
+    cardH2.setAttribute("class", "card-h2");
+    let idTitulo = `idTitulo${dica.titulo}`;
+    cardH2.setAttribute("id", idTitulo);
+    cardH2.innerHTML = dica.titulo;
+    liCard.appendChild(cardH2);
+    let cardH3 = document.createElement("h3");
+    cardH3.innerHTML = `Linguagem: ${dica.linguagem}`;
+    liCard.appendChild(cardH3);
+    let cardH3C = document.createElement("h3");
+    cardH3C.innerHTML = `Categoria: ${dica.categoria}`;
+    liCard.appendChild(cardH3C);
+    let pdescricao = document.createElement("p");
+    pdescricao.innerHTML = `${dica.descricao}`;
+    liCard.appendChild(pdescricao);
+    if (dica.video) {
+        let aVideo = document.createElement("a")
+        aVideo.setAttribute("href", dica.video);
+        aVideo.setAttribute("target", "_blank");
+        aVideo.setAttribute("data-src", dica.video);
+        aVideo.innerHTML= "Video"; //parainserir o icone aqui
+       liCard.appendChild(aVideo);
+    } 
+    let botaoEditarCard = document.createElement("button");
+    let editarHandler = `editarDica('${dica.id}')`
+    botaoEditarCard.setAttribute("onclick", editarHandler);
+    botaoEditarCard.innerHTML = "Editar"
+    liCard.appendChild(botaoEditarCard);
+    let botaoApagarCard = document.createElement("button");
+    let apagarHandler = `removerDica('${dica.id}')`
+    botaoApagarCard.setAttribute("onclick", apagarHandler);
+    botaoApagarCard.innerHTML = "Apagar"
+    liCard.appendChild(botaoApagarCard);
     return liCard
+ 
 }
 
 function editarDica(idDicaAEditar) {
@@ -217,7 +242,7 @@ popularCards (todasAsDicas);
 popularDataList()
 contadorDisplay()
 // window.addEventListener("load", verificaLSporArray)
-// console.log(todasAsDicas)
+
 document.getElementById("botaoPesquisar").onclick = pesquisaPorTitulo;
 document.getElementById("limparInput").onclick = limparForm;
 document.getElementById("searchBarLimpar").onclick = limparCampoPesquisa();
