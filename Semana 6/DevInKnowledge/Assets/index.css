@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: rgb(249, 249, 249);
+    background-image:  url(./images/fundoLaranja.jpg);
+    
+}
+.containerTotal{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+.formContainer {
+    display: flex;
+    flex-grow: 1;
+    max-width: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5vh;
+    margin-top: 5vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-bottom: 5vh;
+    width: 40vh;
+    height: 70vh;
+    color: aliceblue;
+    background: #142B40;
+    -webkit-box-shadow: 15px 5px 29px 13px rgba(0,0,0,0.36); 
+box-shadow: 15px 5px 29px 13px rgba(0,0,0,0.36);
+}
+.headerAside{
+    display: flex;
+    flex-direction: column;
+    border-radius: 2vh;
+    height: 20%;
+    text-align: center;
+    color: aliceblue;
+    justify-content: center;
+    background: #402110;
+    margin-top: 3vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    -webkit-box-shadow: 15px 5px 29px 13px rgba(0,0,0,0.36); 
+box-shadow: 15px 5px 29px 13px rgba(0,0,0,0.36);
+}
+
+.headerAside h1{
+    font-size: xx-large ;
+}
+label {
+    font-size: x-large ;
+}
+.aside {
+    flex-grow: 1;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    text-align: center;
+    
+}
+
+.displayContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    
+}
+.lateralToda{
+display: flex;
+flex-direction: column;
+align-items: stretch;
+align-content: stretch;
+flex-grow: 1;
+justify-content: space-around;
+}
+main {
+    
+    overflow-y: auto;
+    height: 70vh;
+
+}
+.uLDosCards {
+    flex-wrap: wrap;
+}
+
+.headerLateral {
+
+}
+.formContainer{
+   
+}

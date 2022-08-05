@@ -241,10 +241,8 @@ verificaLSporArray();
 popularCards (todasAsDicas);
 popularDataList()
 contadorDisplay()
-// window.addEventListener("load", verificaLSporArray)
 
 document.getElementById("botaoPesquisar").onclick = pesquisaPorTitulo;
 document.getElementById("limparInput").onclick = limparForm;
 document.getElementById("searchBarLimpar").onclick = limparCampoPesquisa();
-// document.getElementById("formulario").onsubmit = construirDica; //tem q por um if else
 document.getElementById("formulario").onsubmit = editarOuCriar;
