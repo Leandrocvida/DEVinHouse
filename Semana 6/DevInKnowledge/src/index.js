@@ -10,35 +10,35 @@ let todasAsDicas = [];
 let todasAsDicasDefault = [
     {
     id: "1",
-    titulo: `titulo da dica 01`,
-    linguagem: "umaskillqualquer",
-    categoria: "frontEnd",
-    descricao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut rem, iusto odio soluta fugit reprehenderit voluptas expedita, delectus, sed itaque blanditiis! Debitis perspiciatis, ut voluptate saepe est reprehenderit non inventore.",
-    video: "https://www.youtube.com/" 
+    titulo: `Apresentação`,
+    linguagem: "JavaScript",
+    categoria: "fullStack",
+    descricao: "Estes Cards de Dicas padrão estão programados para aparecer no primeiro acesso. São carregados no local storage, no primeiro acesso e podem ser removidos e editados normalmente.",
+    video: "https://youtu.be/dQw4w9WgXcQ" 
     },
     {
     id: "2",
-    titulo: `titulo da dica 02`,
-    linguagem: "umaskillqualquer",
+    titulo: `Coisas Extras`,
+    linguagem: "JavaScript e HTML",
     categoria: "backEnd",
-    descricao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut rem, iusto odio soluta fugit reprehenderit voluptas expedita, delectus, sed itaque blanditiis! Debitis perspiciatis, ut voluptate saepe est reprehenderit non inventore.",
-    video: "https://www.youtube.com/" 
+    descricao: "Dentro da barra  de pesquise criei uma função que cria um lista de Auto-completar. Conforme você for digitando vão sendo filtradas apenas os titulos que contém os caracteres.",
+    video: "https://youtu.be/ocwnns57cYQ" 
     },
     {
     id: "deb839fdf-68f1-4b23-bec2-16e0af1d478",
-    titulo: `titulo da dica 03`,
-    linguagem: "umaskillqualquer",
-    categoria: "fullStack",
-    descricao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut rem, iusto odio soluta fugit reprehenderit voluptas expedita, delectus, sed itaque blanditiis! Debitis perspiciatis, ut voluptate saepe est reprehenderit non inventore.",
-    video: "https://www.youtube.com/" 
+    titulo: `Considere Isso`,
+    linguagem: "Meditação",
+    categoria: "softSkill",
+    descricao: "Todo o projeto que parece enorme inicialmente tem que ser executado aos poucos. Dividir as tarefas em subcategorias faz os problemas parecerem mais fáceis. Se bem que esse video demonstra a Sensação de corrigir alguns projetos...",
+    video: "https://youtu.be/baY3SaIhfl0" 
     },
     {
     id: "4",
-    titulo: `titulo da dica 04`,
-    linguagem: "umaskillqualquer",
-    categoria: "softSkill",
-    descricao: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut rem, iusto odio soluta fugit reprehenderit voluptas expedita, delectus, sed itaque blanditiis! Debitis perspiciatis, ut voluptate saepe est reprehenderit non inventore.",
-    video: "https://www.youtube.com/" 
+    titulo: `Sem Video`,
+    linguagem: "Javascript",
+    categoria: "frontEnd",
+    descricao: "Esse card não possui video, como pode ser verificado o botão não é adicionado automaticamente.",
+    video: "" 
     },
 
 ]
@@ -72,23 +72,23 @@ function construirDica() {
 todasAsDicas.push(criaDica());
 localStorage.setItem("todasAsDicas", JSON.stringify(todasAsDicas));
 popularCards (todasAsDicas);
-contadorDisplay()
-limparForm()
+contadorDisplay();
+limparForm();
 }
 
 function verificaLSporArray() {
     if (localStorage.hasOwnProperty("todasAsDicas")) {
-        return todasAsDicas = JSON.parse(localStorage.getItem("todasAsDicas"))
+        return todasAsDicas = JSON.parse(localStorage.getItem("todasAsDicas"));
     }
     else {
         todasAsDicas = todasAsDicasDefault
-        return localStorage.setItem("todasAsDicas", JSON.stringify(todasAsDicas))
+        return localStorage.setItem("todasAsDicas", JSON.stringify(todasAsDicas));
     }       
 }
 
 function limparForm() {
     inputHiddenID.value = null;
-    document.getElementById("formulario").reset()
+    document.getElementById("formulario").reset();
 }
 
 
@@ -126,18 +126,21 @@ function criaCard(dica) {
         aVideo.setAttribute("href", dica.video);
         aVideo.setAttribute("target", "_blank");
         aVideo.setAttribute("data-src", dica.video);
-        aVideo.innerHTML= "Video"; //parainserir o icone aqui
+        aVideo.setAttribute("class", "botaoVideo");
+        aVideo.innerHTML= "<i class='fa-solid fa-video'></i>"; //parainserir o icone aqui
        liCard.appendChild(aVideo);
     } 
     let botaoEditarCard = document.createElement("button");
     let editarHandler = `editarDica('${dica.id}')`
+    botaoEditarCard.setAttribute("class", "botaoEditarCard");
     botaoEditarCard.setAttribute("onclick", editarHandler);
-    botaoEditarCard.innerHTML = "Editar"
+    botaoEditarCard.innerHTML = "<i class='fa-solid fa-pen-to-square'></i>"
     liCard.appendChild(botaoEditarCard);
     let botaoApagarCard = document.createElement("button");
     let apagarHandler = `removerDica('${dica.id}')`
     botaoApagarCard.setAttribute("onclick", apagarHandler);
-    botaoApagarCard.innerHTML = "Apagar"
+    botaoApagarCard.setAttribute("class", "botaoApagarCard");
+    botaoApagarCard.innerHTML = "<i class='fa-solid fa-trash-can'></i>"
     liCard.appendChild(botaoApagarCard);
     return liCard
  
