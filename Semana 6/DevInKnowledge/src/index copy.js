@@ -204,29 +204,7 @@ function filtrarPorCategoria(categ) {
     
     return arrayFiltrado
 }
-function displayFilter(display){
-        
-    if (display === "frontEnd") {
 
-        let arrayFrontEnd = filtrarPorCategoria("frontEnd");
-        return popularCards (arrayFrontEnd);
-    }
-    if (display === "backEnd") {
-        let arrayBackEnd = filtrarPorCategoria("backEnd");
-        popularCards (arrayBackEnd);
-    }
-    if (display === "fullStack") {
-        let arrayFullStack= filtrarPorCategoria("fullStack");
-        popularCards (arrayFullStack);
-    }
-    if (display === "softSkill") {
-        let arraySoftSkill= filtrarPorCategoria("softSkill");
-        popularCards (arraySoftSkill);
-    }
-    if (display === "total") {
-        popularCards (todasAsDicas);
-    }
-}
 function contadorDisplay() {
     let arrayFrontEnd = filtrarPorCategoria("frontEnd");
     let arrayBackEnd = filtrarPorCategoria("backEnd");

@@ -32,7 +32,4 @@ else{
  atualizaEstacao({texto:"Verão", url:"./Assets/quando-comeca-o-verao.png"})
 }
 }
-
-
-
 data.onchange = verificaEstacao;
