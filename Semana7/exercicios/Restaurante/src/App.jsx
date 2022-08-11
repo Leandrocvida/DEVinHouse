@@ -1,10 +1,15 @@
 
 import './App.css'
+import { Navbar } from './Components/navBar/navBar'
 
 function App() {
   
   return (
-    <h1>Pizza Di Pepe</h1>
+    <div class= "pageContainer">
+
+      <Navbar/>
+    </div> 
+    
   )
 }
 
