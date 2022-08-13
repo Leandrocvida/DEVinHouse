@@ -1,0 +1,28 @@
+:root {
+  --brand-green: #00856F;
+  --brand-green-light: #DCE9E2;
+  --brand-green-light-02: #F7F9F9;
+  --brand-beige: #FFFAF1;
+  --brand-green-hover: #00453A;
+  --gray-headline:#212529;
+  --gray-paragraph:#495057;
+  --white:#FFFFFF;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--gray-paragraph);
+  background-color: var(--brand-green-light);
+}
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body, #root{
+  display: flex;
+  min-height: 100vh;
+  min-width: 100%;
+}
