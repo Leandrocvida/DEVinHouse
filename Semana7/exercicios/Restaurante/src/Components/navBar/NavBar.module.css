@@ -1,0 +1,23 @@
+.navBarContainer {
+  display: flex;
+  height: 15vh;
+  text-align: center;
+  
+  align-items: center;
+  justify-content: space-between;
+}
+.navBarContainer,
+.navBarContainer img {
+  background-color: blanchedalmond;
+ 
+}
+.navBarContainer img {
+    height: 100%;
+}
+
+h1,
+h2 {
+  text-align: center;
+  padding: 1rem;
+  margin: 0;
+}

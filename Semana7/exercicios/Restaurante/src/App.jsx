@@ -1,13 +1,14 @@
 
 import './App.css'
-import { Navbar } from './Components/navBar/navBar'
-
+import { Footer, Navbar, Main } from "./Components/index"
 function App() {
   
   return (
-    <div class= "pageContainer">
+    <div className = "pageContainer">
 
       <Navbar/>
+      <Main/>
+      <Footer/>
     </div> 
     
   )
