@@ -1,0 +1,110 @@
+[
+  {
+    "id": "16",
+    "nome": "Água",
+    "img": "agua.jpg",
+    "descricao": "Neque porro quisquam est qui dolorem ipsum",
+    "preco": "R$ 5,00",
+    "tempo": "Na hora",
+    "subsecao": "Sem Álcool"
+  },
+  {
+    "id": "17",
+    "nome": "Suco",
+    "img": "suco.jpg",
+    "descricao": "Neque porro quisquam est qui dolorem ipsum",
+    "preco": "R$ 5,00",
+    "tempo": "Na hora",
+    "subsecao": "Sem Álcool"
+  },
+  {
+    "id": "18",
+    "nome": "Refrigerante",
+    "img": "refrigerante.jpg",
+    "descricao": "Neque porro quisquam est qui dolorem ipsum",
+    "preco": "R$ 5,00",
+    "tempo": "Na hora",
+    "subsecao": "Sem Álcool"
+  },
+  {
+    "id": "19",
+    "nome": "Rose",
+    "img": "vinhorose.jpg",
+    "descricao": "Neque porro quisquam est qui dolorem ipsum",
+    "preco": "R$ 35,00",
+    "tempo": "Na hora",
+    "subsecao": "Vinhos"
+  },
+  {
+    "id": "20",
+    "nome": "Branco",
+    "img": "vinhoBranco.jpg",
+    "descricao": "Neque porro quisquam est qui dolorem ipsum",
+    "preco": "R$ 45,00",
+    "tempo": "Na hora",
+    "subsecao": "Vinhos"
+  },
+  {
+    "id": "21",
+    "nome": "Suave",
+    "img": "suave.jpg",
+    "descricao": "Neque porro quisquam est qui dolorem ipsum",
+    "preco": "R$ 45,00",
+    "tempo": "Na hora",
+    "subsecao": "Vinhos"
+  },
+  {
+    "id": "22",
+    "nome": "Mojito",
+    "img": "Mojito.jpg",
+    "descricao": "Neque porro quisquam est qui dolorem ipsum",
+    "preco": "R$ 25,00",
+    "tempo": "Na hora",
+    "subsecao": "Drinks"
+  },
+  {
+    "id": "23",
+    "nome": "Cuba Libre",
+    "img": "cubaLibre.jpg",
+    "descricao": "Neque porro quisquam est qui dolorem ipsum",
+    "preco": "R$ 25,00",
+    "tempo": "Na hora",
+    "subsecao": "Drinks"
+  },
+  {
+    "id": "24",
+    "nome": "Caipirinha",
+    "img": "caipirinha.jpg",
+    "descricao": "Neque porro quisquam est qui dolorem ipsum",
+    "preco": "R$ 25,00",
+    "tempo": "Na hora",
+    "subsecao": "Drinks"
+  },
+  {
+    "id": "25",
+    "nome": "Brahma",
+    "img": "brahma.jpg",
+    "descricao": "Neque porro quisquam est qui dolorem ipsum",
+    "preco": "R$ 15,00",
+    "tempo": "Na hora",
+    "subsecao": "Cervejas"
+  },
+  {
+    "id": "26",
+    "nome": "Skoll",
+    "img": "skoll.jpg",
+    "descricao": "Neque porro quisquam est qui dolorem ipsum",
+    "preco": "R$ 15,00",
+    "tempo": "Na hora",
+    "subsecao": "Cervejas"
+  },
+  {
+    "id": "27",
+    "nome": "Bohemia",
+    "img": "bohemia.jpg",
+    "descricao": "Neque porro quisquam est qui dolorem ipsum",
+    "preco": "R$ 15,00",
+    "tempo": "Na hora",
+    "subsecao": "Cervejas"
+  }
+]

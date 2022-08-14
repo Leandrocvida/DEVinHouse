@@ -1,20 +1,22 @@
-import {produtos} from "module";
+
 import style from "./Card.module.css";
 import PropTypes from 'prop-types';
 
 export const Card = (produto) => {
     return (
-        <div key={produto.id} className= {style.Card}>
-            <img src={produto.img} alt={produto.nome} />
+        <li key={produto.id} className= {style.Card}>
+            <img className={style.img} src={produto.img} alt={produto.nome} />
+            <div className={style.div} >
             <h3>{produto.nome}</h3>
             <p>{produto.descricao}</p>
             <p>{produto.preco}</p>
-            <p>{produto.tempo}</p>
-        </div>
+            <p>Tempo de preparo:{produto.tempo}</p>
+            </div>
+        </li>
     )
 }
 
-Card.PropTypes = {
+Card.propTypes = {
 produto: PropTypes.shape({
     id: PropTypes.string.isRequired,
     img:PropTypes.string.isRequired,
@@ -22,8 +24,6 @@ produto: PropTypes.shape({
     descricao: PropTypes.string.isRequired,
     preco: PropTypes.string.isRequired,
     tempo: PropTypes.string.isRequired,
-}
-)
-
+}).isRequired,
 
 }

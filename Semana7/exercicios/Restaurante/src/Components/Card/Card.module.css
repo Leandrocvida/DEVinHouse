@@ -1,4 +1,21 @@
 .Card{
     display: flex;
     flex-direction: column;
+    height:300px;
+    width: 300px;
+    margin: 1rem;
+    background-color: whitesmoke;
+    border-radius: 5%;
+    -webkit-box-shadow: 15px 5px 29px 13px rgba(0,0,0,0.36); 
+    box-shadow: 15px 5px 29px 13px rgba(0,0,0,0.36);
+}
+.img{
+    height: 60%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+.div{
+    display: flex;
+    flex-direction: column;
+    padding:0.3rem;
 }

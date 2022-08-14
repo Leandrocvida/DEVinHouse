@@ -1,0 +1,90 @@
+[
+  {
+     "entradas":[
+        {
+           "id":"33",
+           "nome":"Cestino di Pane",
+           "img":"CestinoPaneItaliano.jpg",
+           "descricao":"Pães Artesanais servidos com Manteiga, Azeite, e pastinhas do dia",
+           "preco":"R$ 22,00",
+           "tempo":"Imediato"
+        },
+        {
+           "id":"34",
+           "nome":"Carpaccio á Cipriani",
+           "img":"carpatio.jpg",
+           "descricao":"Carpaccio de Carne, servido com lâminas de Cogumelos, lascas de Parmesão e  crema de Balsâmico",
+           "preco":"R$ 32,00",
+           "tempo":"Imediato"
+        },
+        {
+           "id":"35",
+           "nome":"Caprese di Burrata",
+           "img":"caprese.jpg",
+           "descricao":"Queijo mozarela fresco e muito cremoso, servido em cama de Rúcula e Tomates Frescos",
+           "preco":"R$ 54,00",
+           "tempo":" 5 minutos"
+        },
+        {
+           "id":"36",
+           "nome":"Polenta fritta e Gorgonzola",
+           "img":"polenta.jpg",
+           "descricao":"polenta frita servida com molho de gorgonzola",
+           "preco":"R$ 22,00",
+           "tempo":" 15 minutos"
+        },
+        {
+           "id":"37",
+           "nome":"Arancini di Riso e Linguiça",
+           "img":"arancini.jpg",
+           "descricao":"Tradicional bolinho da região da Sicília, preparado com Arroz Arbóreo, Açafrão, linguiça Blumenau e Parmesão",
+           "preco":"R$ 29,00",
+           "tempo":" 15 minutos"
+        }
+     ]
+  },
+  {
+     "saladas":[
+        {
+           "id":"38",
+           "nome":"Salada com hortelã",
+           "img":"saladacomhortela.jpg",
+           "descricao":"Salada colorida, atrativa. O toque especial de hortelã garante um sabor único.",
+           "preco":"R$ 29,00",
+           "tempo":" 10 minutos"
+        },
+        {
+           "id":"39",
+           "nome":"Salada de rúcula com manga",
+           "img":"saladademangacomrucula.jpg",
+           "descricao":"Rúcula  combinanda com outros vegetais, Manga e  temperos",
+           "preco":"R$ 29,00",
+           "tempo":" 10 minutos"
+        },
+        {
+           "id":"40",
+           "nome":"Salada mediterrânea",
+           "img":"Saladamediterranea.jpg",
+           "descricao":"Feita com grão-de-bico acompanha molho especial",
+           "preco":"R$ 29,00",
+           "tempo":" 10 minutos"
+        },
+        {
+           "id":"41",
+           "nome":"Vinagrete de verão",
+           "img":"vinagretedeverao.jpg",
+           "descricao":"O vinagrete é uma opção versátil, exelente como acompanhamento de carnes vermelhas.",
+           "preco":"R$ 29,00",
+           "tempo":" 10 minutos"
+        },
+        {
+           "id":"42",
+           "nome":"Salada Niçoise",
+           "img":"saladanicoise.jpg",
+           "descricao":"Um grande clássico da cozinha francesa, uma opção ideal para ser consumida durante o verão",
+           "preco":"R$ 29,00",
+           "tempo":" 10 minutos"
+        }
+     ]
+  }
+]

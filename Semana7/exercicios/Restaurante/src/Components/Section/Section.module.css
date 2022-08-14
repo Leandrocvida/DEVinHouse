@@ -1,0 +1,31 @@
+.section{
+    
+    display: flex;
+    flex-direction: column;
+}
+.h2{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: aliceblue;
+    -webkit-box-shadow: 15px 5px 29px 13px rgba(0,0,0,0.36); 
+    box-shadow: 15px 5px 29px 13px rgba(0,0,0,0.36);
+
+}
+.h3{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: rgb(166, 246, 201);
+    width: 300px;
+    align-self: center;
+    -webkit-box-shadow: 15px 5px 29px 13px rgba(0,0,0,0.36); 
+    box-shadow: 15px 5px 29px 13px rgba(0,0,0,0.36);
+}
+.ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+
+}

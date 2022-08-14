@@ -7,7 +7,7 @@ export function Navbar() {
   return (
     <header className={styles.navBarContainer}>
       <img src={logo} alt="logo da empresa" />
-      <h1>Pizza Di Pepe</h1>
+      <h1>Cantina Di Pepe</h1>
       <ul>
         <li>
           <h2>Cardápio</h2>
