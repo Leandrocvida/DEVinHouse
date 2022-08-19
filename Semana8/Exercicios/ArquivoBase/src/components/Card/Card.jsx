@@ -6,7 +6,7 @@ export const Card = ({ produto, selecionado, onSelecionar }) =>
 {
 
   return (
-    <div className={ selecionado ? styles.card : styles.selecionado} onClick={onSelecionar} >
+    <div className={ selecionado ? styles.card : styles.selecionado} onClick={()=>onSelecionar} >
       <img className={styles.img} alt='Foto do prato' src={produto.img} height={200} />
   
       <div className={styles.info}>
