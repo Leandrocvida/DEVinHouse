@@ -6,18 +6,20 @@ import { ProdSelecContext } from "."
         
 export const ProdSelecProvider = ({children}) => {
     const [produtosSelecionados,setProdutosSelecionados]= useState([]);
-    const handleSelecionar = (prod) => {
-        produtosSelecionados.includes(prod)
-          ? setProdutosSelecionados(produtosSelecionados.filter((p) => p !== prod))
-          : setProdutosSelecionados((pprodutosSelecionados) => [
-              ...pprodutosSelecionados,
-              prod,
-            ]);};
+    
     const isSelected = (id) => {
-       return(
-        produtosSelecionados.includes((p)=> p.id === id)
-       ) 
-    }
+        return produtosSelecionados.some((item) => item.id === id);
+      };
+    
+      const handleSelecionar = (prod) => {
+        if (isSelected(prod.id)) {
+          setProdutosSelecionados(produtosSelecionados.filter((item) => item.id !== prod.id));
+          return;
+        }
+    
+        setProdutosSelecionados([...produtosSelecionados, prod]);
+      };
+
     return( 
 
     <ProdSelecContext.Provider value = {{produtosSelecionados, handleSelecionar, isSelected}}>
