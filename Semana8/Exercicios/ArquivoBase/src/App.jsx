@@ -35,9 +35,8 @@ function App() {
     }
   };
   const renderizaSecoes = (arrayRenderizar) => {
-    
-    return (arrayRenderizar.map((secao) => {
-        return (
+    return arrayRenderizar.map((secao) => {
+      return (
         <Secao
           key={secao.nome}
           nome={secao.nome}
@@ -45,12 +44,11 @@ function App() {
           subSecoes={secao.subSecoes ? Array.from(secao.subSecoes) : null}
         />
       );
-    }))
+    });
   };
   const renderSecoes = () => {
     if (secaoSelec === null) {
-      return renderizaSecoes(arraySecoes)
-      
+      return renderizaSecoes(arraySecoes);
     } else {
       let arrayFiltrado = arraySecoes.filter((p) => p.nome === secaoSelec);
       return renderizaSecoes(arrayFiltrado);
@@ -66,7 +64,9 @@ function App() {
       />
       <main className={styles.main}>{renderSecoes()}</main>
       <Footer />
+      <datalist></datalist>
     </div>
+    
   );
 }
 
