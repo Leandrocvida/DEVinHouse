@@ -1,6 +1,14 @@
+import { ListaCards } from "@components"
+import { useProdSelec } from "@contexts"
+
 export const ProdutosSelecionados = () => {
-return(
-    <h1>Produtos Selecionados</h1>
+   const {produtosSelecionados} = useProdSelec()
+    return(
+        <>
+        <h1>Produtos Selecionados</h1>
+        <ListaCards produtos = {produtosSelecionados}/>
+        </>
+
 )
 
 }
