@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import {useProdSelec} from '@contexts'
 import styles from './Card.module.css';
+import { formataValor } from '@utils';
 
 export const Card = ({ produto }) =>{
   const {handleSelecionar, isSelected} = useProdSelec();
@@ -21,7 +22,7 @@ export const Card = ({ produto }) =>{
   
       <div className={styles.footer}>
         <strong className={styles.footerValor}>
-          {`R$ ${produto.valor.toFixed(2).replace('.', `,`)}`}
+          {formataValor(produto.valor)}
         </strong>
   
         <p>{produto.tempoPreparo}</p>
