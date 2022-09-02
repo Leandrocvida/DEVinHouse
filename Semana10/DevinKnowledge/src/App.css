@@ -1,0 +1,279 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+button{
+    cursor: pointer
+}
+body{
+    background: rgb(249, 249, 249);
+    background: url(./images/fundoLaranja.jpg) no-repeat center fixed;     
+    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;;
+    
+    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 97vh;
+ width: 100vw;
+}
+.containerTotal{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.aside {
+    flex-grow: 1;
+    width :30vw;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.formContainer {
+    
+    text-align: center;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+    align-items: center;
+    border-radius: 2rem;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2%;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    width: 100%;
+    height: 80%;
+    color: aliceblue;
+    background: #142B40;
+    -webkit-box-shadow: 15px 5px 29px 13px rgba(0,0,0,0.36); 
+box-shadow: 15px 5px 29px 13px rgba(0,0,0,0.36);
+}
+.formContainer div{
+   width: 80%;
+}
+.formContainer input{
+    
+    width: 100%;
+    max-height: 70%;
+padding: 1%;
+    box-sizing: border-box;
+}
+.formContainer textarea {
+    width: 90%;
+    height: 10rem;
+    resize: none;
+}
+textarea::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+textarea::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+.formContainer input, select, textarea{
+    margin-top:2%;
+    margin-bottom:1%;
+    border-radius: 0.5em;
+    width: 100%;
+}
+.labelLongo {
+font-size: 0.95rem;
+}
+.formContainer button{
+    
+        color: rgb(242, 242, 242);width:40%; font-size: 20px; line-height: 20px; padding: 6px; border-radius: 10px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none;
+          
+          
+         -webkit-box-shadow: 5px 7px 27px 1px rgba(0,0,0,0.51); 
+        box-shadow: 5px 7px 27px 1px rgba(0,0,0,0.51); border: 2px #1FD22A; display: inline-block;
+        
+}
+.buttonContainer{
+    padding: 10px;
+    width: 95%;
+}
+.formBotaoLimpar{
+    background: rgb(79,0,0);
+background: linear-gradient(90deg, rgba(79,0,0,1) 0%, rgba(255,0,12,1) 8%, rgba(121,9,22,1) 100%);
+}
+.formBotaoSalvar{
+    background: #1FD22A;
+    background: -moz-linear-gradient(left, #1FD22A 0%, #23A731 41%, #14752B 100%);
+    background: -webkit-linear-gradient(left, #1FD22A 0%, #23A731 41%, #14752B 100%);
+    background: linear-gradient(to right, #1FD22A 0%, #23A731 41%, #14752B 100%);
+
+}
+
+.formContainer button:hover {
+    filter: brightness(150%) 
+}
+.formContainer button:active {
+    filter: brightness(200%) 
+}
+
+
+.headerAside{
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.9em;
+    height: 20%;
+    text-align: center;
+    color: aliceblue;
+    justify-content: center;
+    background: #402110;
+    margin-top: 2%;
+    margin-left: 5%;
+    padding-left:2rem;
+    padding-right: 2rem;
+    -webkit-box-shadow: 15px 5px 29px 13px rgba(0,0,0,0.36); 
+box-shadow: 15px 5px 29px 13px rgba(0,0,0,0.36);
+}
+
+
+.headerAside h1{
+    font-size: 1.5rem ;
+}
+label {
+    justify-items: center;
+    padding-top: 1rem ;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.lateralToda{
+display: flex;
+flex-direction: column;
+width: 70vw;
+padding-left: 2%;
+flex-grow: 1;
+}
+
+.displayContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+.display {
+    background-color: aliceblue;
+    padding:2%;
+    border-radius: 1rem;
+    -webkit-box-shadow: 17px 13px 25px 11px rgba(0,0,0,0.49); 
+    box-shadow: 17px 13px 25px 11px rgba(0,0,0,0.49);
+}
+.display:hover {
+    background-color: rgb(136, 226, 243);
+}
+.searchBarContainer {
+    padding: 2%;
+}
+
+.searchBarContainer button{
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5%;
+    border-radius: 50%;
+    border:0;
+    -webkit-box-shadow: 17px 13px 25px 11px rgba(0,0,0,0.49); 
+    box-shadow: 17px 13px 25px 11px rgba(0,0,0,0.49);
+}
+.searchBarContainer button:hover {
+    filter: brightness(150%);
+  }
+.searchBarLimpar{
+    
+background-color:#F23E2E;
+}
+.botaoPesquisar{
+    background-color: #142B40;
+}
+.searchBarQuerry {
+  width:80%;
+  padding: 0.5%;
+  border-radius: 8px;
+  border: 0.5px solid #909497;
+  font-family: inherit;
+  font-size: inherit;
+}
+i {
+    color: white;
+  }
+main {
+    overflow-y: auto;
+    max-height: 70%;
+    align-self: flex-end;
+    max-width: 100%;
+}
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    flex-wrap: wrap;
+    width: 100%;
+    
+}
+.card{
+    width:40%;
+    margin:2%;
+    background-color: aliceblue;
+    padding:2%;
+    border-radius: 1rem;
+    -webkit-box-shadow: 17px 13px 25px 11px rgba(0,0,0,0.49); 
+    box-shadow: 17px 13px 25px 11px rgba(0,0,0,0.49);
+}
+
+.card >*{
+    padding:0.3rem;
+}
+.card p, h2 {
+    margin-bottom: 1rem;
+    word-wrap: break-word;
+}
+.card button, a{
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5%;
+    border-radius: 50%;
+    border:0;
+    gap: 10%;
+    margin-right: 0.5rem;
+}
+.card button:hover {
+    filter: brightness(150%) 
+}
+.card button:active {
+    filter: brightness(200%) 
+}
+.card a:hover {
+    filter: brightness(150%) 
+}
+.card a:active {
+    filter: brightness(200%) 
+}
+.botaoEditarCard {
+background-color: #142B40;
+}
+.botaoApagarCard {
+background-color: #402110;
+}
+.botaoVideo {
+background-color: #F2921D;
+}
+.headerLateral {
+padding-top: 5%;
+}
