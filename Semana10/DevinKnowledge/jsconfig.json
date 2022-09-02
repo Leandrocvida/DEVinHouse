@@ -2,10 +2,10 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@images": ["./assets/images/index.jsx"],
-      "@icons": ["./assets/icons/index.jsx"],
-      "@components": ["./components/index.jsx"],
-      "@services": ["./services/index.jsx"],
+      "@images": ["./assets/images/index.js"],
+      "@icons": ["./assets/icons/index.js"],
+      "@components": ["./components/index.js"],
+      "@services": ["./services/index.js"],
       "@contexts": ["./contexts/index.js"],
       "@pages": ["./pages/index.js"],
       "@router": ["./router/index.js"],
