@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
-import {useProdSelec} from '@contexts'
-import styles from './Card.module.css';
+import { useProdSelec } from '@contexts';
 import { formataValor } from '@utils';
+import PropTypes from 'prop-types';
+import styles from './Card.module.css';
 
 export const Card = ({ produto }) =>{
   const {handleSelecionar, isSelected} = useProdSelec();
