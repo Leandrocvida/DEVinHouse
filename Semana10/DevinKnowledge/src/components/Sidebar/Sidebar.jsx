@@ -1,13 +1,13 @@
 export const Sidebar = () => {
   return (
     <aside>
-      <header class="headerAside">
+      <header className="headerAside">
         <h1>DEVinKnowledge</h1>
         <div>
           <h3>Learn, Code and Save</h3>
         </div>
       </header>
-      <form class="formContainer" id="formulario" action="">
+      <form className="formContainer" id="formulario" action="">
         <input type="hidden" id="identificadorOculto" />
         <div>
           <label>Título</label>
@@ -46,12 +46,12 @@ export const Sidebar = () => {
           </select>
         </div>
         <div>
-          <label class="labelLongo">Descriçãp Completa (Dica)</label>
+          <label className="labelLongo">Descriçãp Completa (Dica)</label>
           <br />
           <textarea
             minlength="32"
             maxlength="512"
-            class="textarea-form"
+            className="textarea-form"
             id="descricaoInput"
             name="descricaoInput"
             placeholder="Descreva Sua Dica"
@@ -69,11 +69,11 @@ export const Sidebar = () => {
             id="vidYoutubeInput"
           />
         </div>
-        <div class="buttonContainer">
-          <button class="formBotaoLimpar" id="limparInput">
+        <div className="buttonContainer">
+          <button className="formBotaoLimpar" id="limparInput">
             Limpar
           </button>
-          <button class="formBotaoSalvar" type="submit" id="salvarInput">
+          <button className="formBotaoSalvar" type="submit" id="salvarInput">
             Salvar
           </button>
         </div>

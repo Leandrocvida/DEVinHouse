@@ -5,7 +5,7 @@ import { MainContent } from "@components";
 export const Home = () => {
   return (
     <body>
-      <div class="containerTotal">
+      <div className="containerTotal">
         <Sidebar/>
        <MainContent/>
       </div>
