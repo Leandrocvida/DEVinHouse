@@ -3,12 +3,10 @@ import { MainContent } from "@components";
 
 
 export const Home = () => {
-  return (
-    <body>
+  return (    
       <div className="containerTotal">
         <Sidebar/>
        <MainContent/>
       </div>
-    </body>
   );
 };

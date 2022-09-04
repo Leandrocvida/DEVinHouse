@@ -14,8 +14,8 @@ export const Sidebar = () => {
           <br />
           <input
             type="text"
-            minlength="8"
-            maxlength="64"
+            minLength="8"
+            maxLength="64"
             name="titulo"
             placeholder="Digite seu Título"
             id="tituloInput"
@@ -28,8 +28,8 @@ export const Sidebar = () => {
           <input
             name="linguagem"
             type="text"
-            minlength="4"
-            maxlength="16"
+            minLength="4"
+            maxLength="16"
             placeholder="Digite uma Linguagem ou skill"
             id="linguagemInput"
             required
@@ -49,8 +49,8 @@ export const Sidebar = () => {
           <label className="labelLongo">Descriçãp Completa (Dica)</label>
           <br />
           <textarea
-            minlength="32"
-            maxlength="512"
+            minLength="32"
+            maxLength="512"
             className="textarea-form"
             id="descricaoInput"
             name="descricaoInput"
