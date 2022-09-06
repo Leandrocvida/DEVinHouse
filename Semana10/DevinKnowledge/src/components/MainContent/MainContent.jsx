@@ -1,4 +1,5 @@
 import { Summary, Filter, CardList, TipCard} from "@components";
+import { useAppContext } from "@contexts";
 const todasAsDicasDefault = [
   {
   id: "1",
@@ -51,6 +52,9 @@ const umaDica = {
   video: "https://youtu.be/dQw4w9WgXcQ" 
   };
 export const MainContent = () => {
+  let result = useAppContext();
+  console.log(result)
+
   return (
     <div className="lateralToda">
       <header className="headerLateral">
