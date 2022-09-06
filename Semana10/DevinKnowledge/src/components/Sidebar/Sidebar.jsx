@@ -1,4 +1,8 @@
+import { useForm } from "react-hook-form";
+
 export const Sidebar = () => {
+  const { register, handleSubmit } = useForm();
+  const handleCreateTip = (dados) => console.log(dados);
   return (
     <aside>
       <header className="headerAside">
@@ -7,38 +11,34 @@ export const Sidebar = () => {
           <h3>Learn, Code and Save</h3>
         </div>
       </header>
-      <form className="formContainer" id="formulario" action="">
+      <form className="formContainer"  onSubmit={handleSubmit(handleCreateTip)}>
         <input type="hidden" id="identificadorOculto" />
         <div>
           <label>Título</label>
           <br />
           <input
+            {...register("titulo")}
             type="text"
             minLength="8"
             maxLength="64"
-            name="titulo"
             placeholder="Digite seu Título"
-            id="tituloInput"
-            required
           />
         </div>
         <div>
           <label>Linguagem/skill</label>
           <br />
           <input
-            name="linguagem"
+            {...register("linguagem")}
             type="text"
             minLength="4"
             maxLength="16"
             placeholder="Digite uma Linguagem ou skill"
-            id="linguagemInput"
-            required
           />
         </div>
         <div>
           <label>Categoria</label>
           <br />
-          <select name="categoriaInput" id="categoriaInput" required>
+          <select {...register("categoria")}>
             <option value="frontEnd">FrontEnd</option>
             <option value="backEnd">BackEnd</option>
             <option value="fullStack">FullStack</option>
@@ -49,20 +49,19 @@ export const Sidebar = () => {
           <label className="labelLongo">Descriçãp Completa (Dica)</label>
           <br />
           <textarea
+            {...register("descricao")}
             minLength="32"
             maxLength="512"
             className="textarea-form"
-            id="descricaoInput"
-            name="descricaoInput"
             placeholder="Descreva Sua Dica"
             rows="5"
-            required
           ></textarea>
         </div>
         <div>
           <label>Vídeo Youtube</label>
           <br />
           <input
+            {...register("video")}
             type="url"
             placeholder="Digite o endereço de um Video"
             name="vidYoutubeInput"
@@ -70,14 +69,12 @@ export const Sidebar = () => {
           />
         </div>
         <div className="buttonContainer">
-          <button className="formBotaoLimpar" id="limparInput">
-            Limpar
-          </button>
-          <button className="formBotaoSalvar" type="submit" id="salvarInput">
+          <button className="formBotaoLimpar">Limpar</button>
+          <button className="formBotaoSalvar" type="submit">
             Salvar
           </button>
         </div>
       </form>
     </aside>
   );
-}
+};
