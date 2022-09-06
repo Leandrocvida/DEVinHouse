@@ -20,7 +20,7 @@ export const Produtos = () => {
 
   const obterSecoesFiltradas = () => {
     if (filtro) {
-      return secoes.filter((s) => s === filtro);
+      return secoes.filtro((s) => s === filtro);
     }
     return secoes;
   };

@@ -12,7 +12,7 @@ export const ProdSelecProvider = ({ children }) => {
   const handleSelecionar = (prod) => {
     if (isSelected(prod.id)) {
       setProdutosSelecionados(
-        produtosSelecionados.filter((item) => item.id !== prod.id)
+        produtosSelecionados.filtro((item) => item.id !== prod.id)
       );
       return;
     }
@@ -21,9 +21,7 @@ export const ProdSelecProvider = ({ children }) => {
   };
 
   const limpaSelec = () => {
-    
     setProdutosSelecionados([]);
-    
   };
 
   return (
