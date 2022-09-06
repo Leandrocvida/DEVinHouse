@@ -1,0 +1,1 @@
+export {dicasPadrao} from './dicasPadrao.js'
