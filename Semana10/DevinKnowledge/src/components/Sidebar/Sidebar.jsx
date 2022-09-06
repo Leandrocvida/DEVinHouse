@@ -1,8 +1,10 @@
 import { useForm } from "react-hook-form";
-
+import { useAppContext } from "@contexts";
 export const Sidebar = () => {
   const { register, handleSubmit } = useForm();
-  const handleCreateTip = (dados) => console.log(dados);
+  const {createTip}= useAppContext();
+  const handleCreateTip = (dados) =>{createTip(dados)} ;
+  
   return (
     <aside>
       <header className="headerAside">

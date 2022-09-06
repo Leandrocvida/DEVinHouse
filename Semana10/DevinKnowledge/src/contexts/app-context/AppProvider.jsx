@@ -5,13 +5,14 @@ import {dicasPadrao} from "@services"
 export const AppProvider = ({ children }) => {
   const dados = "conectado!";
   const [allTips, setAlltips]  = useState(dicasPadrao);
-  const [ filtro, setFilter ] = useState(null);
+  const [ filtro, setFiltro ] = useState(null);
   const createTip = (dica) => {
+    dica.id = Math.random().toString();
     setAlltips([...allTips, dica]);
   };
 
   const filterTips = (query) => {
-    query ? setFilter(query) : setFilter(null);
+    query ? setFiltro(query) : setFiltro(null);
   };
 
   const tips = filtro? allTips.filter((tip) => tip.titulo.includes(filtro)) : allTips;

@@ -1,12 +1,16 @@
+import { useAppContext } from "@contexts";
+
 export const Filter = () =>{
-    return(
+    const{ filterTips} = useAppContext();
+
+  return(
     <form className="searchBarContainer">
     <input
       className="searchBarQuerry"
-      type="search"
+      type="text"
       placeholder="Digite um Título para Pesquisar"
-      id="searchBarQuerry"
-      list="listaDeTitulos"
+      onChange={(e) => filterTips(e.target.value)}
+      
     />
     <button className="searchBarLimpar" id="searchBarLimpar">
       <i className="fa-solid fa-x"></i>

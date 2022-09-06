@@ -9,5 +9,5 @@ export const SummaryCard = ({title, count} ) =>{
 }
 SummaryCard.propTypes = {
     title: PropTypes.string.isRequired,
-    count: PropTypes.string.isRequired,
+    count: PropTypes.number.isRequired,
 }

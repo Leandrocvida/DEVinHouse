@@ -10,8 +10,8 @@ const umaDica = {
   video: "https://youtu.be/dQw4w9WgXcQ" 
   };
 export const MainContent = () => {
-  let result = useAppContext();
-  console.log(result)
+  let {tips} = useAppContext();
+  
 
   return (
     <div className="lateralToda">
@@ -22,7 +22,12 @@ export const MainContent = () => {
       </header>
       <main>
         <CardList>
-          <TipCard dica = {umaDica}/>
+          {tips.map((tip) => {
+            return(
+            <TipCard key={tip.id} dica = {tip}/>
+            )
+          })}
+          
         </CardList>
       </main>
     </div>
